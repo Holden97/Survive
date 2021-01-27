@@ -14,8 +14,9 @@ public class UIManager : MonoBehaviour
     static Color hintColor;//提示信息的初始颜色
     public static List<string> hintList;//提示文本
     public static float showTime = 5f;
+
     // Start is called before the first frame update
-    static UIManager instance;
+    private static UIManager instance;
 
     public static UIManager Instance { get => instance; set => instance = value; }
 
@@ -51,7 +52,7 @@ public class UIManager : MonoBehaviour
         foreach (var text in HintTextArray)
         {
             float curAlpha = text.color.a;
-            text.color = new Color(hintColor.r, hintColor.g, hintColor.b, curAlpha -= Time.deltaTime/showTime);
+            text.color = new Color(hintColor.r, hintColor.g, hintColor.b, curAlpha -= Time.deltaTime / showTime);
         }
         //说明此时仍可以移位
         if (HintTextArray[0].color.a <= 0 && hintList.Count > 0)

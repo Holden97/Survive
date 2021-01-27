@@ -19,8 +19,7 @@ public class MonoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (updateEvent != null)
-            updateEvent();
+        updateEvent?.Invoke();
     }
 
     public void AddUpdateListener(UnityAction fun)
