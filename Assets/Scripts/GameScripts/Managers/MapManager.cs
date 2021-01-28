@@ -75,7 +75,7 @@ public class MapManager : MonoBehaviour
         }
 
         //在土地上随机生成石子
-        int rockCount = UnityEngine.Random.Range(15, 25);
+        int rockCount = UnityEngine.Random.Range(15, 200);
         //在土地上随机生成树木
         int treeCount = UnityEngine.Random.Range(10, 20);
 
@@ -93,10 +93,14 @@ public class MapManager : MonoBehaviour
             //地图内地形（坐标-50-49）
             for (int j = 0; j < MapLength; j++)
             {
+                //生成基本土地
+                Instantiate(Terrains[1], new Vector3(-50 + j, -50 + i, -10), transform.rotation, GameObject.Find("MapManager").transform);
+                //生成特定地形
                 switch (map[i, j])
                 {
                     case 0:
                     case 1:
+                        continue;
                     case 2:
                     case 3:
                         Instantiate(Terrains[map[i, j]], new Vector3(-50 + j, -50 + i, 0), transform.rotation, GameObject.Find("MapManager").transform);
@@ -105,6 +109,7 @@ public class MapManager : MonoBehaviour
                         Instantiate(Terrains[map[i, j]], new Vector3(-50 + j - 0.13f, -50 + i + 1.14f, 0), transform.rotation, GameObject.Find("MapManager").transform);
                         break;
                 }
+
             }
         }
         //空气墙的四个角落
