@@ -9,7 +9,7 @@ public class Main : MonoBehaviour
     {
         GameDataMgr.GetInstance().Init();
         ItemCellMgr.GetInstance().Init();
-        UIMgr.GetInstance().ShowPanel<MainPanel>("MainPanel", PanelLayer.bot); 
+        //UIMgr.GetInstance().ShowPanel<MainPanel>("MainPanel", PanelLayer.bot); 
     }
 
 }
