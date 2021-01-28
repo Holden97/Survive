@@ -106,7 +106,7 @@ public class MapManager : MonoBehaviour
                         Instantiate(Terrains[map[i, j]], new Vector3(-50 + j, -50 + i, 0), transform.rotation, GameObject.Find("MapManager").transform);
                         break;
                     case 4:
-                        Instantiate(Terrains[map[i, j]], new Vector3(-50 + j - 0.13f, -50 + i + 1.14f, 0), transform.rotation, GameObject.Find("MapManager").transform);
+                        Instantiate(Terrains[map[i, j]], new Vector3(-50 + j, -50 + i, 0), transform.rotation, GameObject.Find("MapManager").transform);
                         break;
                 }
 
