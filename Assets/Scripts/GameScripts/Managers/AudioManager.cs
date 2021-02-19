@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip coinClip;
 
     [Header("武器音效")]
-    public AudioClip[] shootClip = new AudioClip[WeaponCount];
+    public AudioClip[] shootClip  = new AudioClip[WeaponCount];
     public AudioClip[] reloadClip = new AudioClip[WeaponCount];
     public AudioClip noBullet;
 
@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
+        
         ambientSource = gameObject.AddComponent<AudioSource>();
         musicSource = gameObject.AddComponent<AudioSource>();
         voiceSource = gameObject.AddComponent<AudioSource>();
